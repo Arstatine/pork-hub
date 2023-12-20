@@ -13,20 +13,20 @@ export const menu = [
     title: 'Home',
   },
   {
-    path: '/',
+    path: '/recipes',
     title: 'Recipes',
   },
   {
-    path: '/',
+    path: '/market',
     title: 'Market',
   },
   {
-    path: '/',
+    path: '/photos',
     title: 'Photos',
   },
 
   {
-    path: '/',
+    path: '/videos',
     title: 'Videos',
   },
 ];
