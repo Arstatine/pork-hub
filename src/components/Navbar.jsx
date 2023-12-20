@@ -177,7 +177,7 @@ function Navbar() {
             <Link
               to={m.path}
               key={index}
-              className='cursor-pointer hover:bg-tertiary px-4 py-2 grow text-center hover:text-accent'
+              className='cursor-pointer hover:bg-tertiary px-4 py-2 grow text-center'
             >
               {m.title}
             </Link>
@@ -207,7 +207,7 @@ function Navbar() {
                 to={m.path}
                 key={index}
                 onClick={() => setOpenMenu(false)}
-                className='cursor-pointer hover:bg-tertiary px-6 py-4 grow w-full hover:text-accent'
+                className='cursor-pointer hover:bg-tertiary px-6 py-4 grow w-full'
               >
                 {m.title}
               </Link>
