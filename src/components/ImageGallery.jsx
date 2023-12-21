@@ -5,7 +5,11 @@ function ImageGallery({ link }) {
     <Item
       content={
         <div className='flex justify-center h-full'>
-          <img src={link} className='object-contain object-center' />
+          <img
+            src={link}
+            className='object-contain object-center'
+            loading='lazy'
+          />
         </div>
       }
       original={link}
@@ -19,7 +23,8 @@ function ImageGallery({ link }) {
             ref={ref}
             onClick={open}
             src={link}
-            title='Hello'
+            loading='lazy'
+            title={link}
             className='object-cover aspect-video cursor-pointer hover:scale-105 transition-all'
           />
         </div>
