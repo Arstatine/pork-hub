@@ -12,6 +12,7 @@ function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [searches, setSearches] = useState(search_lists);
   const [searchText, setSearchText] = useState('');
+  const path = window.location.pathname;
 
   // checked if local storage has value and assign it to the search list
   useEffect(() => {
@@ -177,7 +178,9 @@ function Navbar() {
             <Link
               to={m.path}
               key={index}
-              className='cursor-pointer hover:bg-tertiary px-4 py-2 grow text-center'
+              className={`cursor-pointer transition-all ${
+                path == m.path ? 'bg-tertiary' : 'hover:bg-tertiary'
+              } px-4 py-2 grow text-center`}
             >
               {m.title}
             </Link>
@@ -193,7 +196,9 @@ function Navbar() {
       >
         <div className='w-full flex flex-col'>
           <div className='flex p-4 justify-between items-center'>
-            <img src={logo} alt='logo' className='h-[40px]' />
+            <Link to='/' onClick={() => setOpenMenu(false)}>
+              <img src={logo} alt='logo' className='h-[40px]' />
+            </Link>
             <button
               className='p-4 rounded-full hover:bg-tertiary'
               onClick={() => setOpenMenu(false)}
@@ -207,7 +212,9 @@ function Navbar() {
                 to={m.path}
                 key={index}
                 onClick={() => setOpenMenu(false)}
-                className='cursor-pointer hover:bg-tertiary px-6 py-4 grow w-full'
+                className={`cursor-pointer ${
+                  path == m.path ? 'bg-tertiary' : 'hover:bg-tertiary'
+                } px-6 py-4 grow w-full`}
               >
                 {m.title}
               </Link>
