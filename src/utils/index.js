@@ -111,15 +111,115 @@ export const images = [
 
 export const videos = [
   {
-    thumbnaik:
-      'https://th.bing.com/th?id=OIF.7U5KbtWF6PHWPnMUn%2bE6Dw&w=294&h=180&c=7&r=0&o=5&pid=1.7',
     video: `<iframe
-    width='1280'
-    height='720'
-    src='https://www.youtube.com/embed/DetZena94dE'
-    title='3 Tasty Pork Recipes by Erwan Heussaff'
-    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-    allowfullscreen
-  ></iframe>`,
+        src='https://www.youtube.com/embed/DetZena94dE'
+        title='3 Tasty Pork Recipes by Erwan Heussaff'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/IXDMM2sO0G4'
+        title='BABY BACK RIBS 3 WAYS | Ninong Ry'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/UhcWAldpBYk'
+        title='SPICY PORK BELLY CURRY, THAI STEAM FISH CURRY * MUKBANG SOUNDS *'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/GL36jqZHPs0'
+        title='The Perfect Crispy Skin Pork Belly (Lechon Kawali)'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/JpxxGLBIyXU'
+        title='Sold out 4 Roasted Pigs in 1 hours！Crispy Roasted Pork Master/最火熱燒肉！1小時賣光4隻烤豬, 脆皮燒肉大師/添記燒肉'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/UtijkIHtKbc'
+        title='Wow cook pork recipe in my big family - Amazing video'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/QAOBoPBEthY'
+        title='DON CLAUDIO´S LECHON HOUSE | ALFIE EATS | LECHON DE LECHE'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/Sew4rctKghY'
+        title='Why billions of people won&#39;t eat pork (or why we don&#39;t know)'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/JtnsZ2JaKso'
+        title='How to Butcher an Entire Pig: Every Cut of Pork Explained | Handcrafted | Bon Appetit'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/86C6vdallHM'
+        title='PARTS NG BABOY EXPLAINED | Ninong Ry'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/I7p6bTCEHrQ'
+        title='$4 Pork Vs. $19 Pork'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/0_BjuPuYAys'
+        title='Crispy Baby Lechon In 5 Easy Steps: Homemade Cochinillo | Pepper.ph'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/NJz35cD23Gg'
+        title='Homemade Cochinillo'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
+  },
+  {
+    video: `<iframe
+        src='https://www.youtube.com/embed/Xl1xLKWdehU'
+        title='Salamat Dok: Iba&#39;t ibang parte ng Baboy'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>`,
   },
 ];
