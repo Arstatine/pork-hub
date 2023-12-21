@@ -12,7 +12,7 @@ function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
   const [searches, setSearches] = useState(search_lists);
   const [searchText, setSearchText] = useState('');
-  const path = window.location.pathname;
+  const [path, setPath] = useState(window.location.pathname);
 
   // checked if local storage has value and assign it to the search list
   useEffect(() => {
@@ -178,6 +178,7 @@ function Navbar() {
             <Link
               to={m.path}
               key={index}
+              onClick={() => setPath(m.path)}
               className={`cursor-pointer transition-all ${
                 path == m.path ? 'bg-tertiary' : 'hover:bg-tertiary'
               } px-4 py-2 grow text-center`}
@@ -211,7 +212,10 @@ function Navbar() {
               <Link
                 to={m.path}
                 key={index}
-                onClick={() => setOpenMenu(false)}
+                onClick={() => {
+                  setOpenMenu(false);
+                  setPath(m.path);
+                }}
                 className={`cursor-pointer ${
                   path == m.path ? 'bg-tertiary' : 'hover:bg-tertiary'
                 } px-6 py-4 grow w-full`}
