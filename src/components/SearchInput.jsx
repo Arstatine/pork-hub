@@ -11,11 +11,19 @@ export default function SearchInput({
       <Search className='shrink-0' onClick={() => setFocused(true)} />
       <input
         type='search'
-        placeholder='Search Porkhub'
+        placeholder='Search recipes, photos and videos'
         value={searchText}
         onChange={(e) => setSearchText(e.target.value)}
         onFocus={() => setFocused(true)}
-        onKeyDown={handleSearchSubmit}
+        onKeyDown={(e) => {
+          handleSearchSubmit(e);
+          if (
+            (e.key === 'Enter' || e.key === 'Go' || e.key === 'Search') &&
+            searchText != ''
+          ) {
+            e.currentTarget.blur();
+          }
+        }}
         className='h-full w-full bg-secondary-hover outline-none'
       />
     </div>
