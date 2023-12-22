@@ -1,18 +1,21 @@
-import { CircleUserRound, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logo from '../assets/porkhub-logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { search_lists, menu } from '../utils';
+import { menu } from '../utils';
 import SearchList from './SearchList';
 import SearchInput from './SearchInput';
 
-function Navbar() {
+function Navbar({ searchText, setSearchText }) {
   const [focused, setFocused] = useState(false);
-  const [openLogin, setOpenLogin] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  const [searches, setSearches] = useState(search_lists);
-  const [searchText, setSearchText] = useState('');
+  const [searches, setSearches] = useState([]);
   const [path, setPath] = useState(window.location.pathname);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setPath(window.location.pathname);
+  }, [window.location.pathname]);
 
   // checked if local storage has value and assign it to the search list
   useEffect(() => {
@@ -45,9 +48,20 @@ function Navbar() {
       searchText != ''
     ) {
       setSearches((prev) => [searchText, ...prev]);
+      setFocused(false);
       let newData = searches == '' ? searchText : searchText + ',' + searches;
       window.localStorage.setItem('searches', `${newData}`);
+      navigate('/');
     }
+  };
+
+  const handleClickSearch = (text) => {
+    setSearches((prev) => [text, ...prev]);
+    setFocused(false);
+    setSearchText(text);
+    let newData = searches == '' ? searchText : searchText + ',' + searches;
+    window.localStorage.setItem('searches', `${newData}`);
+    navigate('/');
   };
 
   return (
@@ -89,8 +103,23 @@ function Navbar() {
               focused ? 'block' : 'hidden  opacity-0'
             }`}
           >
-            <div className='py-2 px-4 text-sm italic'>
-              {searches.length > 0 ? 'Recent searches' : 'No recent searches'}
+            <div className='py-2 px-4 text-sm italic flex justify-between'>
+              {searches.length > 0 ? (
+                <>
+                  <div>Recent searches</div>
+                  <div
+                    className='cursor-pointer hover:text-red-400'
+                    onClick={() => {
+                      setSearches([]);
+                      window.localStorage.setItem('searches', '');
+                    }}
+                  >
+                    Clear
+                  </div>
+                </>
+              ) : (
+                <div>No recent searches</div>
+              )}
             </div>
 
             {/* Search List */}
@@ -99,6 +128,7 @@ function Navbar() {
                 <SearchList
                   key={index}
                   index={index}
+                  handleClickSearch={handleClickSearch}
                   handleRemoveSearches={handleRemoveSearches}
                   list={list}
                 />
@@ -128,8 +158,23 @@ function Navbar() {
                 focused ? 'block w-full' : 'hidden w-[0px] opacity-0'
               }`}
             >
-              <div className='py-2 px-4 text-sm italic overflow-x-hidden'>
-                Recent searches
+              <div className='py-2 px-4 text-sm italic overflow-x-hidden flex justify-between'>
+                {searches.length > 0 ? (
+                  <>
+                    <div>Recent searches</div>
+                    <div
+                      className='cursor-pointer hover:text-red-400'
+                      onClick={() => {
+                        setSearches([]);
+                        window.localStorage.setItem('searches', '');
+                      }}
+                    >
+                      Clear
+                    </div>
+                  </>
+                ) : (
+                  <div>No recent searches</div>
+                )}
               </div>
 
               {/* Search List */}
@@ -138,6 +183,7 @@ function Navbar() {
                   <SearchList
                     key={index}
                     index={index}
+                    handleClickSearch={handleClickSearch}
                     handleRemoveSearches={handleRemoveSearches}
                     list={list}
                   />
@@ -147,26 +193,14 @@ function Navbar() {
           </div>
 
           {/* Profile Menu */}
-          <button
-            className='p-3 hover:bg-secondary-hover rounded-full cursor-pointer'
-            onFocus={() => setOpenLogin(true)}
-            onBlur={() => setOpenLogin(false)}
-          >
-            <CircleUserRound className='h-full ' />
-          </button>
-
-          {/* Profile Menu List */}
-          <div
-            className={`absolute bg-secondary-hover top-[60px] w-[150px] rounded-lg right-0 opacity-100 transition-all ${
-              openLogin ? 'block' : 'hidden opacity-0'
-            }`}
-          >
-            <div className='cursor-pointer py-3 px-4 hover:bg-tertiary text-sm text-center rounded-t-lg'>
-              Login
-            </div>
-            <div className='cursor-pointer py-3 px-4 hover:bg-tertiary text-sm text-center rounded-b-lg'>
-              Sign Up
-            </div>
+          <div className='hidden lg:block'>
+            Welcome to{' '}
+            <Link
+              to='/'
+              className='text-accent cursor-pointer hover:opacity-80'
+            >
+              Porkhub!
+            </Link>
           </div>
         </div>
       </div>
@@ -230,7 +264,7 @@ function Navbar() {
       {/* input focus background */}
       {focused && (
         <div
-          className='absolute h-screen w-screen top-0 left-0 bg-primary opacity-10 z-[998]'
+          className='fixed h-screen w-screen top-0 left-0 bg-primary opacity-50 z-[998]'
           onClick={() => setFocused(false)}
         ></div>
       )}
