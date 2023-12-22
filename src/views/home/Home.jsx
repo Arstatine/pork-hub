@@ -55,7 +55,7 @@ function Home({ searchText }) {
               <span className='text-accent'>Hot</span> Recipes of Pork
             </h1>
             <Link to='/photos' className='hover:text-accent'>
-              See all photos
+              See all recipes
             </Link>
           </div>
         )}
