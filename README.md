@@ -1,6 +1,6 @@
 # Pork Hub
 
-## A haven for all things about pork like recipes, market place, etc.
+## A haven for all things about pork like recipes, marketplace, videos and photos.
 
 ## How to run?
 
@@ -20,6 +20,6 @@ Prerequisite:
 
 5. Copy the local server link and paste it to the browser or just go to this link [http://127.0.0.1:5173/](http://127.0.0.1:5173/)
 
-Visit the app
+Visit the app [here](https://pork-hub.vercel.app)
 
 _Made by Arstatine_
