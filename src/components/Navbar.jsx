@@ -225,7 +225,7 @@ function Navbar({ searchText, setSearchText }) {
 
       {/* Bottom Navbar Mobile */}
       <div
-        className={`flex lg:hidden justify-start items-start bg-secondary-hover h-full w-full flex-col absolute top-0 left-0 transition-all z-[1000] ${
+        className={`flex lg:hidden justify-start items-start bg-secondary-hover h-full w-full flex-col fixed top-0 left-0 transition-all z-[1000] ${
           openMenu ? 'translate-x-[0%]' : 'translate-x-[-100%]'
         } `}
       >
