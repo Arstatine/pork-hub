@@ -4,7 +4,7 @@ function VideoGallery({ video, thumbnail }) {
   return (
     <Item html={`${video}`} width='1280' height='720'>
       {({ ref, open }) => (
-        <div className='w-full sm:w-1/2 lg:w-1/3 overflow-hidden object-cover relative'>
+        <div className='w-full sm:w-1/2 lg:w-1/3 overflow-hidden object-cover relative group'>
           <div
             ref={ref}
             onClick={open}
@@ -12,7 +12,7 @@ function VideoGallery({ video, thumbnail }) {
           ></div>
           <div
             dangerouslySetInnerHTML={{ __html: video }}
-            className='z-[1] aspect-video w-auto object-cover overflow-hidden'
+            className='z-[1] aspect-video w-auto object-cover overflow-hidden group-hover:scale-105 transition-all'
           ></div>
         </div>
       )}
