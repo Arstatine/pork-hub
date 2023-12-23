@@ -7,7 +7,7 @@ function RecipeItem({ link, thumbnail, title }) {
         <img
           src={thumbnail}
           alt={title}
-          className='aspect-video object-cover group-hover:scale-105'
+          className='aspect-video object-cover group-hover:scale-105 transition-all'
         />
         <div className='absolute bottom-0 left-0 w-full bg-[rgba(0,0,0,.75)] text-center px-4 py-3'>
           {title}
