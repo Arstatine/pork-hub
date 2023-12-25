@@ -39,7 +39,7 @@ function Home({ searchText }) {
 
         {/* RECIPES */}
         {searchText != '' ? (
-          <div className='flex justify-between pb-4 pt-12 px-4 lg:px-0'>
+          <div className='flex justify-between pb-4 px-4 lg:px-0'>
             <h1>
               <span className='text-accent'>Recipes</span> Result
             </h1>
@@ -50,7 +50,7 @@ function Home({ searchText }) {
             )}
           </div>
         ) : (
-          <div className='flex justify-between pb-4 pt-12 px-4 lg:px-0'>
+          <div className='flex justify-between pb-4 px-4 lg:px-0'>
             <h1 className=' text-lg'>
               <span className='text-accent'>Hot</span> Recipes of Pork
             </h1>
