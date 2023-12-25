@@ -5,7 +5,7 @@ function Footer() {
     <div className='text-center py-4 bg-secondary mt-4'>
       Made by{' '}
       <Link
-        to='https://github.com/Arstatine'
+        to='https://arstatine.github.io'
         target='_blank'
         className='text-accent hover:opacity-80'
       >
